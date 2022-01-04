@@ -33,8 +33,7 @@ def get_arg_parser():
         type=str,
         metavar="CONFIG.FILE",
         action='store',
-        help='Some Option',
-        default=DEFAULT_CONFIG_FILE,
+        help='Config file for the conversion',
     )
     return parser
 
@@ -54,6 +53,7 @@ def enable_logging(args: Namespace):
 def load_config(args: Namespace):
     config_file = args.config if args.config else os.environ.get('CONSEM_CONFIG', DEFAULT_CONFIG_FILE)
     log.info(f"Using Convertor config from {config_file}")
+    log.info(f"env == {os.environ}")
     return yml_to_dict(config_file)
 
 

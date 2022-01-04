@@ -21,4 +21,27 @@ class Convertor(ABC):
     def run(self):
         """ Runs the steps described in the config
         """
-        log.warning("TODO - create the run method")
+        self.prepare()
+        self.input()
+        log.warning("TODO -- load and output")
+        # self.load()
+        # self.output()
+        log.info("conversion complete")
+
+    def prepare(self):
+        """ analyzes the config and creates internal worker-objects to actually handle the conversion
+        """
+        #  TODO - make some work-space-temp-folder
+
+        assert 'in' in self._config, "Convertor needs input to work on"
+        self._input_producers = list()
+        for num, input_config in enumerate(self._config['in']):
+            # out_file = num
+            log.warning(f"have to make InputProducer {num}, {input_config}")
+            # append producer
+
+    def input(self):
+        """ produces the inputs to load
+        """
+        for i in self._input_producers:
+            i.produce(self)
