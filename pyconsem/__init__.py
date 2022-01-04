@@ -7,10 +7,10 @@
 
 """
 
-from .convertor import MyModel
+from .convertor import Convertor
 import logging
 
-__all__ = ['MyModel']
+__all__ = ['Convertor']
 
 log = logging.getLogger(__name__)
 log.addHandler(logging.NullHandler())

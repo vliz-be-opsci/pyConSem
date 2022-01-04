@@ -21,7 +21,7 @@ loggers:
   __main__:
     level: DEBUG
     propagate: yes
-  cctst:
+  pyconsem:
     level: DEBUG
     propagate: yes
 root:
