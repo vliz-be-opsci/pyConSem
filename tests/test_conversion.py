@@ -28,7 +28,7 @@ out:
   - pykm2tbl:
       result: "{BASE}/output/whatever.csv"
       query:
-        folder: "{BASE}/pykm2tbl/"
+        folder: "{BASE}/pykg2tbl/"
         name: zomaar.sparql
         args:
           x: 1
